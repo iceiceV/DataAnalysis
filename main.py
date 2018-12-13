@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
+from crud import upload_image_file
+
 # -----------------------Python code for service----------------------
 app = flask.Flask(__name__)
 
@@ -15,9 +17,9 @@ SUPERHEROES = firestore.client().collection('muscledata')
 
 @app.route('/processdata', methods=['POST'])
 def create_hero():
-    # req = flask.request.json
-    # hero = SUPERHEROES.document()
-    # hero.set(req)
+    req = flask.request.json
+    hero = SUPERHEROES.document()
+    hero.set(req)
 
     return flask.jsonify({'id': 'hallo Gunnar'}), 201
 
@@ -214,6 +216,9 @@ while s < len(x_start)-1:
     #muscle1 = plt.plot(x,y,'r',linewidth = 13)
     plt.show()
     s +=1
+
+    # Save images
+    image_url = upload_image_file(request.files.get('image'))
 
     
 
