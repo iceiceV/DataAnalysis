@@ -2,6 +2,7 @@ import firebase_admin
 from firebase_admin import firestore
 import flask
 import icecodeMain
+import six
 
 # -----------------------Python code for service----------------------
 app = flask.Flask(__name__)
