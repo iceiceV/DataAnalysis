@@ -15,10 +15,11 @@ SUPERHEROES = firestore.client().collection('muscledata')
 
 @app.route('/processdata', methods=['POST'])
 def create_hero():
-    req = flask.request.json
-    hero = SUPERHEROES.document()
-    hero.set(req)
-    return flask.jsonify({'id': hero.id}), 201
+    # req = flask.request.json
+    # hero = SUPERHEROES.document()
+    # hero.set(req)
+
+    return flask.jsonify({'id': 'hallo Gunnar'}), 201
 
 @app.route('/processdata/<id>')
 def read_hero(id):
