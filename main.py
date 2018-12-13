@@ -218,7 +218,10 @@ while s < len(x_start)-1:
     s +=1
 
     # Save images
-    image_url = upload_image_file(request.files.get('image'))
+    image_name = 'plot' + str(s) + '.png'
+    fig.savefig(image_name)
+
+    image_url = upload_image_file(request.files.get(image_name))
 
     
 
