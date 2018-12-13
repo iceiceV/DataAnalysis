@@ -1,2 +1,5 @@
 runtime: python37
 service: processdata
+libraries:
+- name: numpy
+  version: "1.6.1"
